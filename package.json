@@ -1,0 +1,21 @@
+{
+  "name": "api-consulta-edoc-elastic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://tfs.sgi.ms.gov.br/tfs/Global/CSIS-G14/_git/API-CONSULTA-EDOC-ELASTIC"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.2.0",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+  }
+}

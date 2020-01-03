@@ -1,0 +1,1 @@
+module.exports = "/d0001/consulta-edoc-elastic/v1"
