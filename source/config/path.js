@@ -1,1 +1,1 @@
-module.exports = "/d0001/consulta-edoc-elastic/v1"
+module.exports = "/d0490/consulta-edoc-elastic/v1"

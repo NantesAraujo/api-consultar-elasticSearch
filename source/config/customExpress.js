@@ -6,7 +6,7 @@ module.exports = function(){
 
     consign()
         .include('source/routes/default')
-        .then('source/routes/elasticSearch')
+        .then('source/routes/elastic')
         .into(app);
 
     return app;

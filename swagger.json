@@ -1,0 +1,56 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger De Documentação para Aplicação API-CONSULTA-EDOC-ELASTIC",
+    "description": "Api de consulta para dados no Serviço do Elastic",
+    "license": {
+      "name": "sgi",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:5000",
+  "basePath": "/d0490/consulta-edoc-elastic/api-docs",
+  "tags": [
+    {
+      "name": "Validar Servico Ativo",
+      "description": "Verifica o status do serviço"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/validarServicoAtivo": {
+      "parameters"   : [
+        {}
+      ],
+      "get": {
+        "tags": [
+          "Validar Servico Ativo"
+        ],
+        "summary": "Método get que retorna o status no ambiente devops.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/trechoGet"
+            }          
+          },
+          "403": {
+            "description": "Não autorizado no ambiente DevOps da SGI."
+          },
+          "500": {
+              "description": "Ocorreu um erro inesperado na api."
+          }
+        }
+      }
+    }   
+  }
+}

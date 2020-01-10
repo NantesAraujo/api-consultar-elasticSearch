@@ -1,9 +1,16 @@
 const app = require('./source/config/customExpress')();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+// require('dotenv').load();
 
-const PORT = 5000
+const PORT = 5000 || process.env.PORT;
+
+const region = process.env.NODE_ENV || "hom"
+
+app.use('/d0490/consulta-edoc-elastic/v1/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.listen(PORT, () => {
-    console.log(`
+    console.log("Porta:" + PORT + '  Ambiente: ' + region + `
 :::'###::::'########::'####::::::::::'########:'##::::::::::'###:::::'######::'########:'####::'######::
 ::'## ##::: ##.... ##:. ##::::::::::: ##.....:: ##:::::::::'## ##:::'##... ##:... ##..::. ##::'##... ##:
 :'##:. ##:: ##:::: ##:: ##::::::::::: ##::::::: ##::::::::'##:. ##:: ##:::..::::: ##::::: ##:: ##:::..::

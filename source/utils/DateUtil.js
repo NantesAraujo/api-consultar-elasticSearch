@@ -9,9 +9,9 @@ definirData = (ano, mes, ultimoDia) => {
         return new Date(ano, mes - 1, 01); //retorna ultimo dia do mes
 }
 
-definirFiltroEntreDatas = (params) => {  
-    let dataInicial = params.dataInicial;
-    let dataFinal = params.dataFinal;
+definirFiltroEntreDatas = (filtros) => {  
+    let dataInicial = filtros.dataInicial;
+    let dataFinal = filtros.dataFinal;
 
     let firstDay = undefined;
     let lastDay = undefined;

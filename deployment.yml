@@ -1,0 +1,33 @@
+version: '3.7'
+
+services:
+
+ <sid>-<region>:
+    image: <image.tag>
+    networks:
+      - proxy_net
+    environment:
+      sid: <sid.env>
+      app_name: <app.name>
+      app_version: <app.version>
+      NODE_ENV: <region>
+    deploy:
+      resources:
+        limits:
+          memory: 700M
+      replicas: <number.replicas>
+      update_config:
+        parallelism: 1
+        delay: 30s
+      placement:
+        constraints:
+          - node.labels.region == <region>
+      labels:
+        - "traefik.frontend.entryPoints=http"
+        - "traefik.port=5000"
+        - "traefik.backend=<sid>-<region>-<app.name>"
+        - "traefik.frontend.rule=Host: <service.domain>;PathPrefix:/<sid>/<app.name>/<version>"
+        - "traefik.docker.network=proxy_net"
+networks:
+  proxy_net:
+    external: true
