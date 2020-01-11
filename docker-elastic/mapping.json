@@ -1,0 +1,382 @@
+{
+    "settings": {     
+      "analysis": {
+        "analyzer": {
+          "analyzer_customizado": {
+            "tokenizer": "standard",
+            "filter": [
+              "lowercase",
+              "stemmer_plural_portugues",
+              "asciifolding"
+            ]
+          }
+        },
+        "filter": {
+          "stemmer_plural_portugues": {
+            "type": "stemmer",
+            "name": "minimal_portuguese"
+          }
+        }
+      }
+    },
+    "mappings": {
+      "properties": {
+        "id": {
+          "type": "long"
+        },
+        "idDocumentoAnterior": {
+          "type": "long"
+        },
+        "assunto": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "corpoTexto": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "situacaoDocumento": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "confidencial": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "siglaDepartamento": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "siglaOrgao": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "ano": {
+          "type": "long"
+        },
+        "usuarioCriacao": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "nomeUsuario": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "estruturaIdOrgao": {
+          "type": "long"
+        },
+        "documentoFisico": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "tipoDocumento": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "idDepartamentoEnvio": {
+          "type": "long"
+        },
+        "estruturaIdDepartamento": {
+          "type": "long"
+        },
+        "assinadoDigital": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "dataCriacao": {
+          "type": "date"
+        },
+        "possuiAnexo": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "tipoConsulta": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "idRepasse": {
+          "type": "long"
+        },
+        "movidoPasta": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "descricaoDepartamento": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "municipioRemetente": {
+          "type": "text",
+          "analyzer": "analyzer_customizado",
+          "fields": {
+            "keyword": {
+              "type": "keyword",
+              "ignore_above": 256
+            }
+          }
+        },
+        "dataTramite": {
+          "type": "date"
+        },
+        "tramite": {
+          "properties": {           
+            "situacaoTramite": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "status": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "usuarioEnvio": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "destinatarioDocumento": {
+          "properties": {
+            "id": {
+              "type": "long"
+            },
+            "dataLeitura": {
+              "type": "text"
+            },
+            "descricaoDepartamento": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "estruturaIdDepartamento": {
+              "type": "long"
+            },
+            "codigoUsuarioGsi": {
+              "type": "long"
+            },
+            "idDestinatarioExterno": {
+              "type": "long"
+            },
+            "lidoPor": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "movidoPasta": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "municipio": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "nomeDestinatarioExterno": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "fechoDestinatarioExterno": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "possuiObservacao": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "siglaDepartamento": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "situacao": {
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            },
+            "TipoRecebimento":{
+              "type": "text",
+              "analyzer": "analyzer_customizado",
+              "fields": {
+                "keyword": {
+                  "type": "keyword",
+                  "ignore_above": 256
+                }
+              }
+            }
+          }
+        },
+        "numeroDocumento": {
+          "properties": {
+            "ano": {
+              "type": "long"
+            },
+            "dataAssinatura": {
+              "type": "date"
+            },
+            "idDepartamentoSGE": {
+              "type": "long"
+            },
+            "numero": {
+              "type": "long"
+            }
+          }
+        }
+      }
+  }
+}
