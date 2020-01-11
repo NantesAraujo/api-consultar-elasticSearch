@@ -3,13 +3,13 @@ version: '3.7'
 services:
 
  d0490-hom:
-    image: repo.ms.gov.br/sgi/csis/g14/d0490.hom.consulta-edoc-elastic:1.0.10
+    image: repo.ms.gov.br/sgi/csis/g14/d0490.hom.consulta-edoc-elastic:1.0.11
     networks:
       - proxy_net
     environment:
       sid: D0490
       app_name: consulta-edoc-elastic
-      app_version: 1.0.10
+      app_version: 1.0.11
       NODE_ENV: hom
     deploy:
       resources:

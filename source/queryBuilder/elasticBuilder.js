@@ -76,7 +76,6 @@ montarConsultar = (filtros) => {
     if (filtros.siglaDepartamentoDestinatario) {
         let atributos = ['destinatarioDocumento.siglaDepartamento', 'destinatarioDocumento.nomeDestinatarioExterno'];
         let filtro = filtros.siglaDepartamentoDestinatario;
-        // let separador = queryBuild.length > 0 ? "," : "";
 
         queryBuild += "" + clausulaOR(filtroPorAtributos(atributos, filtro));
     }

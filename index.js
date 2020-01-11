@@ -3,7 +3,7 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 // require('dotenv').load();
 
-const PORT = 5000 || process.env.PORT;
+const PORT = 6000// || process.env.PORT;
 
 const region = process.env.NODE_ENV || "hom"
 
