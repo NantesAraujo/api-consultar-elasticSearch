@@ -1,0 +1,1 @@
+http://localhost:9126/d0490/consulta-edoc-elastic/v1/search?ano=2019&offset=0&range=10&tipoDocumento=OI&tipoDocumento=OC&estruturaIdDepartamento=4439&tipoConsulta=OFICIO_ELABORACAO&idDocumentoAnterior=0&situacaoTramite=RASCUNHO&situacaoTramite=DEVOLVIDA&statusTramite=TRUE&dataInicio=2019-01-01T00%3A00%3A00.00-04%3A00&dataFim=2019-12-31T23%3A59%3A59.99-04%3A00
