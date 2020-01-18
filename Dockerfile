@@ -14,8 +14,6 @@ COPY index.js ./
 
 RUN npm install
 
-ENV AMBIENTE=hom
-
 USER node
 
 EXPOSE 5000

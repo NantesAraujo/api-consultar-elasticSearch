@@ -82,17 +82,6 @@ pipeline {
                 environment name: "STAGE_FAILURE", value: "NONE"
             }
             steps {
-                script {
-                    echo 'replace All DockerFile'
-                    def dockerfile = readFile 'Dockerfile'
-                    
-                    dockerfile = dockerfile.replaceAll("<ambiente>", "${REGION}")
-                    
-                    writeFile file: "Dockerfile", text: dockerfile
-
-                    echo dockerfile
-                }
-                
                 sh "cd ${WORKSPACE} && docker build -t ${IMAGE} ."
             }
             post {

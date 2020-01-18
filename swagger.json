@@ -35,7 +35,7 @@
         "tags": [
           "Validar Servico Ativo"
         ],
-        "summary": "Método get que retorna o status no ambiente devops.",
+        "summary": "Método get que retorna o status da Api.",
         "responses": {
           "200": {
             "description": "OK",
@@ -44,7 +44,7 @@
             }          
           },
           "403": {
-            "description": "Não autorizado no ambiente DevOps da SGI."
+            "description": "Não autorizado a acessar a API."
           },
           "500": {
               "description": "Ocorreu um erro inesperado na api."

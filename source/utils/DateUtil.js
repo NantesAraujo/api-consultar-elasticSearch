@@ -10,27 +10,21 @@ definirData = (ano, mes, ultimoDia) => {
 }
 
 definirFiltroEntreDatas = (filtros) => {  
-    let dataInicial = filtros.dataInicial;
-    let dataFinal = filtros.dataFinal;
+    let dataInicio = filtros.dataInicio;
+    let dataFim = filtros.dataFim;
 
     let firstDay = undefined;
     let lastDay = undefined;
     
-    let dataAtual = new Date().toLocaleString("pt-BR", {timeZone: "Brazil/West"});
-
-    if(dataInicial && dataFinal) {
-        firstDay = (new Date(dataInicial)).toLocaleString("pt-BR", {timeZone: ZoneBrazilWest});
-        lastDay = (new Date(dataFinal)).toLocaleString("pt-BR", {timeZone: ZoneBrazilWest});
+    if(dataInicio && dataFim) {
+        firstDay = dataInicio.toLocaleString("pt-BR", {timeZone: ZoneBrazilWest});
+        lastDay = dataFim.toLocaleString("pt-BR", {timeZone: ZoneBrazilWest});
     } else {
-        firstDay = definirData(parseInt(obterAnoDataAtual(dataAtual)), JANEIRO, false);
-        lastDay = definirData(parseInt(obterAnoDataAtual(dataAtual)), DEZEMBRO, true);
+        firstDay = definirData(parseInt(filtros.ano), JANEIRO, false);
+        lastDay = definirData(parseInt(filtros.ano), DEZEMBRO, true);
     }
 
-    return formatarDataElastic(firstDay, lastDay);
-}
-
-obterAnoDataAtual = (dataAtual) => {
-    return new Date(dataAtual).getFullYear();
+    return formatarDataElastic(new Date(firstDay), new Date(lastDay));
 }
 
 formatarDataElastic = (dataInicial, dataFinal) => {
@@ -44,4 +38,4 @@ preencherComZero = (number) => {
     return number >= 10 ? number : '0'+number;
 }
 
-module.exports = { definirFiltroEntreDatas }
+module.exports = { definirFiltroEntreDatas, preencherComZero }

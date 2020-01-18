@@ -7,6 +7,10 @@ services:
     networks:
       - proxy_net
     environment:
+      http_proxy:
+      https_proxy:
+      no_proxy:
+      team: G14
       sid: <sid.env>
       app_name: <app.name>
       app_version: <app.version>

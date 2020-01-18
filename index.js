@@ -1,11 +1,10 @@
 const app = require('./source/config/customExpress')();
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
-// require('dotenv').load();
 
-const PORT = 6000// || process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
-const region = process.env.NODE_ENV || "hom"
+const region = process.env.NODE_ENV
 
 app.use('/d0490/consulta-edoc-elastic/v1/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 

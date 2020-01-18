@@ -1,12 +1,12 @@
 const express = require('express');
 const consign = require('consign');
 
-module.exports = function(){
+module.exports = () => {
     const app = express();
 
     consign()
-        .include('source/routes/default')
-        .then('source/routes/elastic')
+        .include('source/controllers/validarServicoAtivo')
+        .then('source/controllers/elasticController')
         .into(app);
 
     return app;
